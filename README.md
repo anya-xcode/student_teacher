@@ -46,7 +46,7 @@ cd backend
 npm run seed
 ```
 
-## 🏃‍♂️ Running the Application
+##  Running the Application
 ```bash
 cd frontend
 npm run dev
@@ -55,7 +55,7 @@ The application will be accessible at `http://localhost:5173`.
 
 ---
 
-## 🌐 Deployment Configuration
+##  Deployment Configuration
 
 ### Backend Deployment
 Set the following environment variables in your hosting provider (e.g., Render, Railway, Heroku):
@@ -69,7 +69,7 @@ Set the following environment variable in your hosting provider (e.g., Vercel, N
 
 ---
 
-## 🛠 Features
+##  Features
 - **Teacher Dashboard:** Create, edit, delete, and publish assignments. View and review student submissions.
 - **Student Dashboard:** View published assignments and submit text-based answers once.
 - **Workflow:** Assignments transition through **Draft → Published → Completed** states.
