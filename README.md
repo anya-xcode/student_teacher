@@ -44,20 +44,8 @@ To create the default Teacher and Student accounts, run the seed script:
 ```bash
 cd backend
 npm run seed
-```
-
-**Default Credentials:**
-- **Teacher:** `teacher@gmail.com` / `teacher@123`
-- **Student:** `student@gmail.com` / `student@123`
-
----
-
-## Running the Application
-
-You will need two terminal windows open:
-
-### Terminal 1: Backend Server
 ```bash
+# Terminal 1: Backend
 cd backend
 npm start
 ```
