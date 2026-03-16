@@ -60,7 +60,22 @@ The application will be accessible at `http://localhost:5173`.
 
 ---
 
-## Features
+## 🌐 Deployment Configuration
+
+### Backend Deployment
+Set the following environment variables in your hosting provider (e.g., Render, Railway, Heroku):
+- `PORT`: The port the server should run on (usually provided by the environment).
+- `MONGO_URI`: Your production MongoDB connection string.
+- `JWT_SECRET`: A long, random string for signing tokens.
+
+### Frontend Deployment
+Set the following environment variable in your hosting provider (e.g., Vercel, Netlify):
+- `VITE_API_BASE_URL`: The absolute URL of your deployed backend (e.g., `https://api.yourdomain.com`). If the frontend serves as a proxy or is on the same domain, you can leave this empty.
+
+---
+
+## 🛠 Features
 - **Teacher Dashboard:** Create, edit, delete, and publish assignments. View and review student submissions.
 - **Student Dashboard:** View published assignments and submit text-based answers once.
 - **Workflow:** Assignments transition through **Draft → Published → Completed** states.
+- **Security:** JWT authentication, hashed passwords, and a password visibility toggle.

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../App';
-import axios from 'axios';
+import api from '../api';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -22,7 +22,7 @@ export default function Login() {
     if (!email || !password) return setError('Please fill in all fields');
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/auth/login', { email, password });
+      const { data } = await api.post('/api/auth/login', { email, password });
       login(data);
       navigate(`/${data.role}`);
     } catch (err) {

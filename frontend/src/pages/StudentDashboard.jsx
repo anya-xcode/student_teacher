@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../App';
-import axios from 'axios';
-
-const api = (token) => axios.create({ headers: { Authorization: `Bearer ${token}` } });
+import api from '../api';
 
 export default function StudentDashboard() {
   const { auth, logout } = useAuth();
@@ -12,7 +10,7 @@ export default function StudentDashboard() {
   const [answers, setAnswers] = useState({}); // { assignmentId: text }
 
   const fetch = async () => {
-    const { data } = await api(auth.token).get('/api/assignments');
+    const { data } = await api.get('/api/assignments');
     setAssignments(data);
   };
 
@@ -22,7 +20,7 @@ export default function StudentDashboard() {
     const answer = answers[id]?.trim();
     if (!answer) return;
     try {
-      await api(auth.token).post(`/api/assignments/${id}/submit`, { answer });
+      await api.post(`/api/assignments/${id}/submit`, { answer });
       setAnswers({ ...answers, [id]: '' });
       fetch();
     } catch (err) {

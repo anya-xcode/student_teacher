@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../App';
-import axios from 'axios';
-
-const api = (token) => axios.create({ headers: { Authorization: `Bearer ${token}` } });
+import api from '../api';
 
 export default function TeacherDashboard() {
   const { auth, logout } = useAuth();
@@ -17,7 +15,7 @@ export default function TeacherDashboard() {
 
   const fetch = async () => {
     const params = filter !== 'All' ? { status: filter } : {};
-    const { data } = await api(auth.token).get('/api/assignments', { params });
+    const { data } = await api.get('/api/assignments', { params });
     setAssignments(data);
   };
 
@@ -29,10 +27,10 @@ export default function TeacherDashboard() {
     if (!form.title || !form.description || !form.dueDate) return setError('All fields required');
     try {
       if (editId) {
-        await api(auth.token).put(`/api/assignments/${editId}`, form);
+        await api.put(`/api/assignments/${editId}`, form);
         setEditId(null);
       } else {
-        await api(auth.token).post('/api/assignments', form);
+        await api.post('/api/assignments', form);
       }
       setForm({ title: '', description: '', dueDate: '' });
       fetch();
@@ -42,22 +40,22 @@ export default function TeacherDashboard() {
   };
 
   const changeStatus = async (id, status) => {
-    await api(auth.token).patch(`/api/assignments/${id}/status`, { status });
+    await api.patch(`/api/assignments/${id}/status`, { status });
     fetch();
   };
 
   const deleteA = async (id) => {
-    await api(auth.token).delete(`/api/assignments/${id}`);
+    await api.delete(`/api/assignments/${id}`);
     fetch();
   };
 
   const viewSubs = async (id) => {
-    const { data } = await api(auth.token).get(`/api/assignments/${id}/submissions`);
+    const { data } = await api.get(`/api/assignments/${id}/submissions`);
     setSubs({ id, list: data });
   };
 
   const markReviewed = async (subId) => {
-    await api(auth.token).patch(`/api/submissions/${subId}/review`);
+    await api.patch(`/api/submissions/${subId}/review`);
     viewSubs(subs.id);
   };
 

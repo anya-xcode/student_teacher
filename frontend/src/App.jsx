@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-route
 import Login from './pages/Login';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
+import api, { setAuthToken } from './api';
 
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -12,6 +13,7 @@ function AuthProvider({ children }) {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
     const name = localStorage.getItem('name');
+    if (token) setAuthToken(token);
     return token ? { token, role, name } : null;
   });
 
@@ -19,11 +21,13 @@ function AuthProvider({ children }) {
     localStorage.setItem('token', data.token);
     localStorage.setItem('role', data.role);
     localStorage.setItem('name', data.name);
+    setAuthToken(data.token);
     setAuth(data);
   };
 
   const logout = () => {
     localStorage.clear();
+    setAuthToken(null);
     setAuth(null);
   };
 
