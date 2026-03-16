@@ -46,7 +46,13 @@ cd backend
 npm run seed
 ```
 
-##  Running the Application
+**Default Credentials:**
+- **Teacher:** `teacher@gmail.com` / `teacher@123`
+- **Student:** `student@gmail.com` / `student@123`
+
+---
+
+## 🏃‍♂️ Running the Application
 ```bash
 cd frontend
 npm run dev
