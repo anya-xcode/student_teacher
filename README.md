@@ -34,7 +34,7 @@ Now, update `.env` with your MongoDB URI and JWT Secret:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://your_username:your_password@cluster.mongodb.net/assignment-portal
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>
 JWT_SECRET=your_super_secret_key
 ```
 
@@ -44,14 +44,9 @@ To create the default Teacher and Student accounts, run the seed script:
 ```bash
 cd backend
 npm run seed
-```bash
-# Terminal 1: Backend
-cd backend
-npm start
 ```
-The API will run at `http://localhost:5000`.
 
-### Terminal 2: Frontend Dashboard
+## 🏃‍♂️ Running the Application
 ```bash
 cd frontend
 npm run dev
