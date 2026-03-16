@@ -8,7 +8,7 @@ A premium, full-stack assignment management system for Teachers and Students.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Project Setup
 Clone the repository and install dependencies in both project directories:
@@ -52,7 +52,7 @@ npm run seed
 
 ---
 
-## 🏃‍♂️ Running the Application
+## Running the Application
 
 You will need two terminal windows open:
 
@@ -72,7 +72,7 @@ The application will be accessible at `http://localhost:5173`.
 
 ---
 
-## 🛠 Features
+## Features
 - **Teacher Dashboard:** Create, edit, delete, and publish assignments. View and review student submissions.
 - **Student Dashboard:** View published assignments and submit text-based answers once.
 - **Workflow:** Assignments transition through **Draft → Published → Completed** states.
