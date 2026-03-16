@@ -10,6 +10,11 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model('User', userSchema);
 
+const assignmentSchema = new mongoose.Schema({
+  teacher: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+});
+const Assignment = mongoose.model('Assignment', assignmentSchema);
+
 const users = [
  {
   name: "Teacher",
@@ -27,6 +32,7 @@ const users = [
 
 mongoose.connect(process.env.MONGO_URI).then(async () => {
   await User.deleteMany({});
+  await Assignment.deleteMany({});
   for (const u of users) {
     const exists = await User.findOne({ email: u.email });
     if (!exists) {
