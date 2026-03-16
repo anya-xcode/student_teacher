@@ -52,7 +52,7 @@ npm run seed
 
 ---
 
-## 🏃‍♂️ Running the Application
+##  Running the Application
 ```bash
 cd frontend
 npm run dev
