@@ -126,8 +126,8 @@ export default function Login() {
         <div className="mt-8 pt-6 border-t border-white/[0.08]">
           <p className="text-xs text-center text-gray-500 font-medium">
             Demo Credentials:<br/>
-            <span className="text-gray-400 inline-block mt-1">teacher@test.com / student1@test.com</span><br/>
-            <span className="text-gray-400">Password: password123</span>
+            <span className="text-gray-400 inline-block mt-1">teacher@gmail.com / student@gmail.com</span><br/>
+            <span className="text-gray-400">Password: teacher@123 / student@123</span>
           </p>
         </div>
       </div>

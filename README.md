@@ -24,7 +24,13 @@ npm install
 ```
 
 ### 2. Environment Configuration
-Ensure your `backend/.env` file is properly configured with your MongoDB URI and JWT Secret:
+Ensure your `backend/.env` file is properly configured. You can use the provided `.env.example` as a template:
+
+```bash
+cd backend
+cp .env.example .env
+```
+Now, update `.env` with your MongoDB URI and JWT Secret:
 
 ```env
 PORT=5000
