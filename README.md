@@ -80,3 +80,15 @@ Set the following environment variable in your hosting provider (e.g., Vercel, N
 - **Student Dashboard:** View published assignments and submit text-based answers once.
 - **Workflow:** Assignments transition through **Draft → Published → Completed** states.
 - **Security:** JWT authentication, hashed passwords, and a password visibility toggle.
+---
+
+## 🧪 Test Credentials
+
+Use the following credentials to test the application with different roles:
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Student** | `student@gmail.com` | `student@123` |
+| **Teacher** | `teacher@gmail.com` | `teacher@123` |
+
+
